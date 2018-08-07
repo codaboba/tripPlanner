@@ -10,5 +10,32 @@ body {
 
 #map {
   height: 100vh;
-  width: 50vw;
+  width: 70vw;
+}
+
+#navbar {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  background-color: pink;
+}
+
+#itinerary {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 50px;
+  height: 40vw;
+  width: 30vw;
+  background-color: gray;
+}
+
+#itinerary {
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 50px+40vw;
+  height: 40vw;
+  width: 30vw;
+  background-color: blue;
 }

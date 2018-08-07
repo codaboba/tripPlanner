@@ -11,8 +11,9 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v10', // mapbox has lots of different map styles available.
 });
 
-const millenniumPark = buildMarker('activity');
-console.log('millienniumPark:', millenniumPark);
+const millenniumPark = buildMarker('activity', [-87.6226, 41.8826]);
+const Doc = buildMarker('restaurant', [-87.658376, 41.994718]);
 
 new mapboxgl.Marker().setLngLat([-87.641, 41.895]).addTo(map);
-millenniumPark.setLngLat([-87.6226, 41.8826]).addTo(map);
+millenniumPark.addTo(map);
+Doc.addTo(map);
