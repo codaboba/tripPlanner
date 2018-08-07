@@ -104,7 +104,18 @@ eval("/* Mapbox GL JS is licensed under the 3-Clause BSD License. Full text of l
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\nmapboxgl.accessToken =\n  'pk.eyJ1IjoicGhhbm55Y29kZXMiLCJhIjoiY2prazRwcHM1MDNqbzN2cGw3MGRsaXF1ZiJ9.6pYqWruzJiNU_aU9mu8dYA';\n\n  const map = new mapboxgl.Map({\n    container: 'map',\n    center: [-87.6354, 41.8885],\n    zoom: 12, // starting zoom\n    style: 'mapbox://styles/mapbox/streets-v10', // mapbox has lots of different map styles available.\n  });\n  \nnew mapboxgl.Marker().setLngLat([-87.641, 41.895]).addTo(map);\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("const { buildMarker } = __webpack_require__(/*! ./marker */ \"./src/marker.js\");\n\nconst mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\nmapboxgl.accessToken =\n  'pk.eyJ1IjoicGhhbm55Y29kZXMiLCJhIjoiY2prazRwcHM1MDNqbzN2cGw3MGRsaXF1ZiJ9.6pYqWruzJiNU_aU9mu8dYA';\n\nconst map = new mapboxgl.Map({\n  container: 'map',\n  center: [-87.6354, 41.8885],\n  zoom: 12, // starting zoom\n  style: 'mapbox://styles/mapbox/streets-v10', // mapbox has lots of different map styles available.\n});\n\nconst millenniumPark = buildMarker('activity');\nconsole.log('millienniumPark:', millenniumPark);\n\nnew mapboxgl.Marker().setLngLat([-87.641, 41.895]).addTo(map);\nmillenniumPark.setLngLat([-87.6226, 41.8826]).addTo(map);\n\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/marker.js":
+/*!***********************!*\
+  !*** ./src/marker.js ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("const mapboxgl = __webpack_require__(/*! mapbox-gl */ \"./node_modules/mapbox-gl/dist/mapbox-gl.js\");\n\nmodule.exports.buildMarker = markerType => {\n  let url = '';\n  if (markerType === 'activity') url = 'http://i.imgur.com/WbMOfMl.png';\n  if (markerType === 'hotel') url = 'http://i.imgur.com/D9574Cu.png';\n  if (markerType === 'restaurant') url = 'http://i.imgur.com/cqR6pUI.png';\n  const img = document.createElement('IMG');\n  img.setAttribute('src', url);\n  return new mapboxgl.Marker(img);\n};\n\n\n//# sourceURL=webpack:///./src/marker.js?");
 
 /***/ })
 
