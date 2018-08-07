@@ -2,16 +2,20 @@
 <html>
 
 <head>
-  <title>My Tripe Planner</title>
+  <title>My Trip Planner</title>
   <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
   <link rel="stylesheet" href="./style.css">
 </head>
 
 <body>
-  <div id="navbar">Navigation Bar<</div>
-  <div id="map"></div>
-  <div id="marker">Marker</div>
-  <div id='itinerary'>Itinerary</div>
+  <div id="navbar">Navigation Bar</div>
+  <div id="main" class="flex-container">
+    <div id="map"></div>
+    <div id="options" class="flex-container">
+      <div id="marker">Marker</div>
+      <div id='itinerary'>Itinerary</div>
+    </div>
+  </div>
   <footer>
     <script src="./bundle.js"></script>
   </footer>

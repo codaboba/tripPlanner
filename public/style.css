@@ -8,34 +8,48 @@ body {
   background-color: #c1b5ad;
 }
 
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+}
+
+#main {
+  margin-top: 50px;
+}
+
+#options {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
 #map {
   height: 100vh;
   width: 70vw;
 }
 
 #navbar {
-  position: relative;
+  position: fixed;
+  top: 0;
   height: 50px;
   width: 100%;
   background-color: pink;
+  z-index: 2;
 }
 
-#itinerary {
-  position: absolute;
+#marker {
   z-index: 1;
   right: 0;
   top: 50px;
-  height: 40vw;
+  height: 50vh;
   width: 30vw;
-  background-color: gray;
+  background-color: red;
 }
 
 #itinerary {
-  position: absolute;
   z-index: 1;
   right: 0;
-  top: 50px+40vw;
-  height: 40vw;
+  height: 50vh;
   width: 30vw;
   background-color: blue;
 }
